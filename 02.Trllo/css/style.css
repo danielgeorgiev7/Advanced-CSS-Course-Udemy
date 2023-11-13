@@ -9,6 +9,15 @@ html {
   box-sizing: border-box;
   color: #333;
   font-size: 62.5%; }
+  @media (max-width: 1300px) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 1100px) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 950px) {
+    html {
+      font-size: 43.75%; } }
 
 body {
   font-family: "Open Sans", sans-serif;
@@ -25,6 +34,9 @@ body {
   background-color: #f4f2f2;
   box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
   min-height: 50rem; }
+  @media only screen and (max-width: 1400px) {
+    .container {
+      margin: 0; } }
 
 .header {
   height: 7rem;
@@ -33,9 +45,16 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center; }
+  @media (max-width: 480px) {
+    .header {
+      flex-wrap: wrap;
+      height: fit-content; } }
 
 .content {
   display: flex; }
+  @media (max-width: 950px) {
+    .content {
+      flex-direction: column; } }
 
 .sidebar {
   background-color: #333;
@@ -54,19 +73,39 @@ body {
   padding: 4.5rem;
   background-color: #faf9f9;
   border-bottom: 0.1rem solid #f0eeee; }
+  @media (max-width: 700px) {
+    .detail {
+      display: flex;
+      flex-direction: column;
+      padding: 3rem; } }
+  @media (max-width: 480px) {
+    .detail {
+      padding: 1.5rem; } }
 
 .description {
   background-color: #fff;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.06);
   padding: 3rem;
   flex: 0 0 60%;
-  margin-right: 6rem; }
+  margin-right: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; }
+  @media (max-width: 700px) {
+    .description {
+      margin-right: 0; } }
 
 .user-reviews {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center; }
+  @media (max-width: 700px) {
+    .user-reviews {
+      margin-top: 3rem; } }
+  @media (max-width: 480px) {
+    .user-reviews {
+      margin-top: 1.5rem; } }
 
 .logo {
   height: 3.25rem;
@@ -78,6 +117,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center; }
+  @media (max-width: 480px) {
+    .search {
+      margin: 1em 0;
+      order: 1;
+      flex: 1 0 90%; } }
   .search__input {
     font-family: inherit;
     font-size: 1.6rem;
@@ -93,6 +137,9 @@ body {
       outline: none;
       width: 100%;
       background-color: #f0eeee; }
+      @media (max-width: 480px) {
+        .search__input:focus {
+          width: 97.5%; } }
     .search__input::placeholder {
       font-weight: 100;
       color: #777; }
@@ -127,6 +174,10 @@ body {
   .user-nav i {
     font-size: 2.5rem;
     color: #777; }
+    @media (max-width: 480px) {
+      .user-nav i {
+        font-size: 2.25rem;
+        margin-top: 1rem; } }
   .user-nav__notification {
     font-size: 1.1rem;
     height: 2rem;
@@ -140,25 +191,53 @@ body {
     display: flex;
     justify-content: center;
     align-items: center; }
+    @media (max-width: 480px) {
+      .user-nav__notification {
+        height: 1.8rem;
+        width: 1.8rem;
+        top: 0; } }
   .user-nav__user {
     display: flex;
     align-items: center;
     gap: 1.5rem; }
+    @media (max-width: 480px) {
+      .user-nav__user {
+        margin-top: 0.5rem; } }
   .user-nav__user-photo {
     height: 5rem;
     border-radius: 50%; }
+    @media (max-width: 480px) {
+      .user-nav__user-photo {
+        height: 4.5rem; } }
   .user-nav__user-name {
     font-size: 1.3rem; }
 
 .side-nav {
-  font-size: 1.75rem;
+  font-size: 1.6rem;
   list-style: none;
   margin-top: 3.5rem;
   padding-inline-start: 0; }
+  @media (max-width: 950px) {
+    .side-nav {
+      margin: 0;
+      display: flex;
+      flex-direction: row; }
+      .side-nav > * {
+        margin: 0 !important;
+        flex-grow: 1;
+        text-align: center; } }
   .side-nav__item {
-    position: relative; }
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    flex-basis: 25%; }
     .side-nav__item:not(:last-child) {
       margin-bottom: 0.5rem; }
+      @media (max-width: 950px) {
+        .side-nav__item:not(:last-child) {
+          border-right: 1px solid #444444; } }
     .side-nav__item:before {
       content: "";
       position: absolute;
@@ -183,16 +262,32 @@ body {
     position: relative;
     z-index: 10;
     padding: 1.5rem 3rem; }
-  .side-nav__link:link,
+    @media (max-width: 700px) {
+      .side-nav__link:link, .side-nav__link:visited {
+        font-size: 1.2rem;
+        padding: 1.5rem; } }
+    @media (max-width: 480px) {
+      .side-nav__link:link, .side-nav__link:visited {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; } }
   .side-nav i {
     margin-right: 2rem;
     font-size: 1.75rem; }
+    @media (max-width: 480px) {
+      .side-nav i {
+        font-size: 1.5rem;
+        margin-right: 0; } }
 
 .legal {
   font-size: 1.25rem;
   color: #ccc;
   text-align: center;
   padding: 2.5rem 1rem; }
+  @media (max-width: 950px) {
+    .legal {
+      display: none; } }
 
 .gallery {
   display: flex; }
@@ -211,6 +306,14 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     padding: 1.5rem 3rem; }
+    @media (max-width: 480px) {
+      .overview__heading {
+        font-size: 1.75rem;
+        padding: 0.75rem 1.5rem; } }
+    @media (max-width: 340px) {
+      .overview__heading {
+        font-size: 1.5rem;
+        padding: 0.5rem 1rem; } }
   .overview__stars {
     margin-right: auto;
     display: flex;
@@ -219,9 +322,15 @@ body {
     color: #eb2f64;
     font-size: 1.6rem;
     padding: 0 0.15rem; }
-  .overview__location {
+    @media (max-width: 480px) {
+      .overview i {
+        font-size: 1.2rem; } }
+  .overview__icon-location {
     display: flex;
     vertical-align: center; }
+    @media (max-width: 480px) {
+      .overview__icon-location {
+        font-size: 1.2rem; } }
   .overview__rating {
     background-color: #eb2f64;
     margin-left: 3rem;
@@ -232,12 +341,22 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column; }
+    @media (max-width: 480px) {
+      .overview__rating {
+        padding: 0.25rem 0.75rem;
+        margin-left: 1em; } }
   .overview__rating-average {
     font-size: 2.25rem;
     font-weight: 300; }
+    @media (max-width: 480px) {
+      .overview__rating-average {
+        font-size: 1.5rem; } }
   .overview__rating-count {
     text-transform: uppercase;
     font-size: 1.2rem; }
+    @media (max-width: 480px) {
+      .overview__rating-count {
+        font-size: 0.9rem; } }
 
 .btn-inline {
   border: none;
@@ -296,19 +415,38 @@ body {
       -webkit-mask-size: cover; }
 
 .recommend {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: #999;
   display: flex;
   align-items: center; }
-  .recommend__count {
-    margin-right: auto; }
+  @media (max-width: 1300px) {
+    .recommend {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2.5rem; } }
+  @media (min-width: 1300px) {
+    .recommend__count {
+      margin-right: auto; } }
   .recommend__photo {
     box-sizing: content-box;
-    height: 5rem;
-    width: 5rem;
     border-radius: 50%;
     margin: -1rem;
+    height: 5rem;
+    width: 5rem;
     border: 0.4rem solid #fff; }
+    @media (max-width: 480px) {
+      .recommend__photo {
+        height: 4rem;
+        width: 4rem;
+        margin: -0.8rem;
+        border: 0.3rem solid #fff; } }
+    @media (max-width: 340px) {
+      .recommend__photo {
+        height: 3rem;
+        width: 3rem;
+        margin: -0.6rem;
+        border: 0.2rem solid #fff; } }
 
 .review {
   background-color: #fff;
@@ -317,6 +455,9 @@ body {
   margin-bottom: 3.5rem;
   position: relative;
   overflow: hidden; }
+  @media (max-width: 700px) {
+    .review {
+      flex: 0 0 60%; } }
   .review__text {
     margin-top: 0.5rem;
     z-index: 10;
@@ -326,11 +467,11 @@ body {
     display: flex;
     align-items: center; }
   .review__photo {
-    height: 6rem;
-    width: 6rem;
+    height: 5.5rem;
+    width: 5.5rem;
     border-radius: 50%; }
   .review__user-box {
-    margin: 0 auto 0 2rem; }
+    margin: 0 auto 0 1.5rem; }
   .review__user-name {
     text-transform: uppercase;
     color: #585858;
@@ -356,6 +497,9 @@ body {
 .cta {
   padding: 3.5rem 0;
   text-align: center; }
+  @media (max-width: 950px) {
+    .cta {
+      padding-bottom: 7rem; } }
   .cta__book-now {
     font-size: 2.1rem;
     font-weight: 300;
@@ -396,3 +540,14 @@ body {
   .btn:focus {
     outline: none;
     animation: pulsate 1s infinite; }
+
+.footer {
+  font-size: 1.5rem;
+  padding: 0.75rem 0;
+  color: #777;
+  text-align: center;
+  background-color: #f0eeee;
+  display: none; }
+  @media (max-width: 950px) {
+    .footer {
+      display: block; } }

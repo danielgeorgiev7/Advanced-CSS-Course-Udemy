@@ -14,6 +14,12 @@
   justify-content: center;
   align-items: center;
 
+  @media (max-width: 480px) {
+    margin: 1em 0;
+    order: 1;
+    flex: 1 0 90%;
+  }
+
   &__input {
     font-family: inherit;
     font-size: 1.6rem;
@@ -30,6 +36,10 @@
       outline: none;
       width: 100%;
       background-color: $grey-light-3;
+
+      @media (max-width: 480px) {
+        width: 97.5%;
+      }
     }
 
     &::placeholder {
@@ -85,6 +95,10 @@
   i {
     font-size: 2.5rem;
     color: $grey-dark-2;
+    @media (max-width: 480px) {
+      font-size: 2.25rem;
+      margin-top: 1rem;
+    }
   }
   &__notification {
     font-size: 1.1rem;
@@ -99,15 +113,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (max-width: 480px) {
+      height: 1.8rem;
+      width: 1.8rem;
+      top: 0;
+    }
   }
   &__user {
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    @media (max-width: 480px) {
+      margin-top: 0.5rem;
+    }
   }
   &__user-photo {
     height: 5rem;
     border-radius: 50%;
+
+    @media (max-width: 480px) {
+      height: 4.5rem;
+    }
   }
 
   &__user-name {
@@ -118,16 +144,36 @@
 //SIDE NAVIGATION
 
 .side-nav {
-  font-size: 1.75rem;
+  font-size: 1.6rem;
   list-style: none;
   margin-top: 3.5rem;
   padding-inline-start: 0;
 
+  @media (max-width: 950px) {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+
+    & > * {
+      margin: 0 !important;
+      flex-grow: 1;
+      text-align: center;
+    }
+  }
+
   &__item {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    flex-basis: 25%;
 
     &:not(:last-child) {
       margin-bottom: 0.5rem;
+      @media (max-width: 950px) {
+        border-right: 1px solid darken($grey-dark-2, 20%);
+      }
     }
 
     &:before {
@@ -164,12 +210,28 @@
     position: relative;
     z-index: 10;
     padding: 1.5rem 3rem;
+
+    @media (max-width: 700px) {
+      font-size: 1.2rem;
+      padding: 1.5rem;
+    }
+
+    @media (max-width: 480px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
-  &__link:link,
   & i {
     margin-right: 2rem;
     font-size: 1.75rem;
+
+    @media (max-width: 480px) {
+      font-size: 1.5rem;
+      margin-right: 0;
+    }
   }
 }
 
@@ -180,6 +242,9 @@
   color: $grey-light-4;
   text-align: center;
   padding: 2.5rem 1rem;
+  @media (max-width: 950px) {
+    display: none;
+  }
 }
 
 //--------------------------------------------------------//
@@ -207,6 +272,14 @@
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     padding: 1.5rem 3rem;
+    @media (max-width: 480px) {
+      font-size: 1.75rem;
+      padding: 0.75rem 1.5rem;
+    }
+    @media (max-width: 340px) {
+      font-size: 1.5rem;
+      padding: 0.5rem 1rem;
+    }
   }
 
   &__stars {
@@ -219,11 +292,17 @@
     color: $color-primary;
     font-size: 1.6rem;
     padding: 0 0.15rem;
+    @media (max-width: 480px) {
+      font-size: 1.2rem;
+    }
   }
 
-  &__location {
+  &__icon-location {
     display: flex;
     vertical-align: center;
+    @media (max-width: 480px) {
+      font-size: 1.2rem;
+    }
   }
   &__rating {
     background-color: $color-primary;
@@ -235,14 +314,24 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    @media (max-width: 480px) {
+      padding: 0.25rem 0.75rem;
+      margin-left: 1em;
+    }
   }
   &__rating-average {
     font-size: 2.25rem;
     font-weight: 300;
+    @media (max-width: 480px) {
+      font-size: 1.5rem;
+    }
   }
   &__rating-count {
     text-transform: uppercase;
     font-size: 1.2rem;
+    @media (max-width: 480px) {
+      font-size: 0.9rem;
+    }
   }
 }
 
@@ -333,23 +422,44 @@
 //--------------------------------------------------------//
 //RECOMMEND
 .recommend {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: $grey-dark-3;
-
   display: flex;
   align-items: center;
 
+  @media (max-width: 1300px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+
   &__count {
-    margin-right: auto;
+    @media (min-width: 1300px) {
+      margin-right: auto;
+    }
   }
 
   &__photo {
     box-sizing: content-box;
-    height: 5rem;
-    width: 5rem;
     border-radius: 50%;
     margin: -1rem;
+    height: 5rem;
+    width: 5rem;
     border: 0.4rem solid #fff;
+
+    @media (max-width: 480px) {
+      height: 4rem;
+      width: 4rem;
+      margin: -0.8rem;
+      border: 0.3rem solid #fff;
+    }
+    @media (max-width: 340px) {
+      height: 3rem;
+      width: 3rem;
+      margin: -0.6rem;
+      border: 0.2rem solid #fff;
+    }
   }
 }
 
@@ -362,6 +472,10 @@
   margin-bottom: 3.5rem;
   position: relative;
   overflow: hidden;
+
+  @media (max-width: 700px) {
+    flex: 0 0 60%;
+  }
 
   &__text {
     margin-top: 0.5rem;
@@ -376,13 +490,13 @@
   }
 
   &__photo {
-    height: 6rem;
-    width: 6rem;
+    height: 5.5rem;
+    width: 5.5rem;
     border-radius: 50%;
   }
 
   &__user-box {
-    margin: 0 auto 0 2rem;
+    margin: 0 auto 0 1.5rem;
   }
 
   &__user-name {
@@ -420,6 +534,10 @@
 .cta {
   padding: 3.5rem 0;
   text-align: center;
+
+  @media (max-width: 950px) {
+    padding-bottom: 7rem;
+  }
 
   &__book-now {
     font-size: 2.1rem;
@@ -482,5 +600,18 @@
   &:focus {
     outline: none;
     animation: pulsate 1s infinite;
+  }
+}
+//--------------------------------------------------------//
+//Footer
+.footer {
+  font-size: 1.5rem;
+  padding: 0.75rem 0;
+  color: $grey-dark-2;
+  text-align: center;
+  background-color: $grey-light-3;
+  display: none;
+  @media (max-width: 950px) {
+    display: block;
   }
 }
