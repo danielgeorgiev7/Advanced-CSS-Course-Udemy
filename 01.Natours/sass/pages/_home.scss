@@ -5,7 +5,7 @@
 }
 
 .section-features {
-  padding: 20rem calc((100% - 114rem) / 2);
+  padding: 20rem 0;
   background-image: linear-gradient(
       to right bottom,
       rgba($color-primary-light, 0.8),
@@ -17,9 +17,25 @@
   margin-top: calc((tan(7deg) * 50vw) * -1);
 
   & .row {
+    max-width: 114rem;
+
     transform: skewY(7deg);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    margin: 0 auto;
+    gap: $gutter-horizontal;
+  }
+}
+
+.section-tours {
+  background-color: $color-grey-light-1;
+  padding: 25rem 0 50rem 0;
+  margin-top: calc((tan(7deg) * 50vw) * -1);
+
+  & .row {
+    max-width: 114rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     margin: 0 auto;
     gap: $gutter-horizontal;
   }
