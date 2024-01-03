@@ -3,3 +3,24 @@
   padding: 25rem 0;
   margin-top: -20vh;
 }
+
+.section-features {
+  padding: 20rem calc((100% - 114rem) / 2);
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url(../img/nat-4.jpg);
+  background-size: cover;
+  transform: skewY(-7deg);
+  margin-top: calc((tan(7deg) * 50vw) * -1);
+
+  & .row {
+    transform: skewY(7deg);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 auto;
+    gap: $gutter-horizontal;
+  }
+}
