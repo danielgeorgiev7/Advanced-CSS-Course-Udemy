@@ -39,6 +39,15 @@
     letter-spacing: 3.5rem;
     padding-left: 1.8rem;
     animation: moveInLeft 0.5s ease-out;
+    @media only screen and (max-width: 600px) {
+      font-size: 4.5rem;
+      letter-spacing: 2rem;
+      padding-left: 0;
+    }
+    @media only screen and (max-width: 400px) {
+      font-size: 3rem;
+      letter-spacing: 1rem;
+    }
   }
 
   &__text-box-sub {
@@ -47,5 +56,13 @@
     font-weight: 700;
     letter-spacing: 1.7rem;
     animation: moveInRight 0.5s ease-out;
+    @media only screen and (max-width: 600px) {
+      font-size: 1.5rem;
+      letter-spacing: 2rem;
+    }
+    @media only screen and (max-width: 400px) {
+      font-size: 1rem;
+      letter-spacing: 1rem;
+    }
   }
 }

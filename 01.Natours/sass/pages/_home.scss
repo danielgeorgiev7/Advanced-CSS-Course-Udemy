@@ -23,6 +23,20 @@
     grid-template-columns: repeat(4, 1fr);
     margin: 0 auto;
     gap: $gutter-horizontal;
+
+    @media only screen and (max-width: 1200px) {
+      & {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        max-width: 40rem;
+      }
+    }
+
+    @media only screen and (max-width: 400px) {
+      & {
+        max-width: 32rem;
+      }
+    }
   }
 }
 
@@ -37,6 +51,13 @@
     grid-template-columns: repeat(3, 1fr);
     margin: 0 auto;
     gap: $gutter-horizontal;
+
+    @media only screen and (max-width: 900px) {
+      & {
+        grid-template-columns: 1fr;
+        max-width: 44rem;
+      }
+    }
   }
 }
 
@@ -67,6 +88,14 @@
       transparent 50%
     ),
     url(../img/nat-10.jpg);
+
+  @media only screen and (max-width: 900px) {
+    background-image: linear-gradient(
+        rgba($color-white, 0.875),
+        rgba($color-white, 0.875)
+      ),
+      url(../img/nat-10.jpg);
+  }
   background-size: 100%;
   max-width: 114rem;
   margin: 0 auto;
@@ -74,8 +103,23 @@
   box-shadow: 0 1.5 4rem rgba($color-black, 0.2);
   height: 50rem;
 
+  @media only screen and (max-width: 1200px) {
+    max-width: 100rem;
+    height: fit-content;
+    background-size: cover;
+  }
+
+  @media only screen and (max-width: 900px) {
+    max-width: 44rem;
+    height: fit-content;
+  }
+
   &__form {
     width: 50%;
     padding: 6rem;
+
+    @media only screen and (max-width: 900px) {
+      width: fit-content;
+    }
   }
 }

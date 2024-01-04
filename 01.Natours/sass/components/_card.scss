@@ -3,6 +3,12 @@
   position: relative;
   height: 52rem;
 
+  @media only screen and (max-width: 900px) {
+    & {
+      height: 82rem;
+    }
+  }
+
   &__side {
     transition: all 0.8s ease;
     position: absolute;
@@ -21,6 +27,15 @@
 
     &--back {
       transform: rotateY(180deg);
+      @media only screen and (max-width: 900px) {
+        & {
+          margin-top: 52rem;
+          height: 30rem;
+          transform: rotateY(0deg);
+          clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+          margin-top: calc(52rem - (30rem * 0.15));
+        }
+      }
 
       &-1 {
         background-image: linear-gradient(
@@ -96,17 +111,24 @@
 
   &__details {
     padding: 3rem;
-    ul {
-      list-style: none;
-      width: 80%;
-      margin: 0 auto;
 
-      li {
-        text-align: center;
-        font-size: 1.5rem;
-        padding: 1rem;
-        &:not(:last-child) {
-          border-bottom: 1px solid #eee;
+    @media only screen and (max-width: 900px) {
+      & {
+        padding-top: 0.5rem;
+      }
+
+      ul {
+        list-style: none;
+        width: 80%;
+        margin: 0 auto;
+
+        li {
+          text-align: center;
+          font-size: 1.5rem;
+          padding: 1rem;
+          &:not(:last-child) {
+            border-bottom: 1px solid #eee;
+          }
         }
       }
     }
@@ -160,6 +182,13 @@
   &__price-box {
     margin-bottom: 8rem;
     color: $color-white;
+
+    @media only screen and (max-width: 900px) {
+      & {
+        margin-bottom: 2rem;
+        margin-top: 1rem;
+      }
+    }
   }
 
   &__price-only {
@@ -170,5 +199,12 @@
   &__price-value {
     font-size: 6rem;
     font-weight: 100;
+
+    @media only screen and (max-width: 900px) {
+      & {
+        font-size: 4rem;
+        margin-bottom: 3rem;
+      }
+    }
   }
 }

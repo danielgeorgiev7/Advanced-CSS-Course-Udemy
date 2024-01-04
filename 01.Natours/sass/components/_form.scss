@@ -18,6 +18,10 @@
     background-color: $color-white;
     transition: all 0.3s;
 
+    @media only screen and (max-width: 900px) {
+      width: 100%;
+    }
+
     &:focus:invalid {
       border-bottom: 3px solid $color-secondary-dark;
     }
@@ -51,6 +55,10 @@
   &__radio-wrapper {
     display: flex;
     gap: 5vw;
+    @media only screen and (max-width: 900px) {
+      flex-direction: column;
+      gap: 2rem;
+    }
   }
 
   &__radio-group {
